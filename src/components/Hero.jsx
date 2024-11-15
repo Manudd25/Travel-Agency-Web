@@ -19,7 +19,7 @@ function Hero() {
         className="w-full h-full object-cover"
       />
 
-<div className="absolute inset-0 bg-black opacity-50 z-0"></div>
+<div className="absolute inset-0 bg-black opacity-25 z-0"></div>
 
       <div className="max-w-[1200px] m-auto relative z-1 text-white h-full flex items-center justify-center px-4"  style={{ bottom: '100%' }}>
         {/* Flex container wrapping both sections */}

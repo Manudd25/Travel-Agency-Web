@@ -3,6 +3,7 @@ import react from '@vitejs/plugin-react-swc'
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: "/Travel-Agency-Web/",
   plugins: [react()],
-  base: "/Travel-Agency-Web/"
+  
 })

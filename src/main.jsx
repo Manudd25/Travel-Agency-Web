@@ -10,7 +10,7 @@ import LogIn from "./components/LogIn.jsx";
 import Booking from "./components/Booking.jsx";
 
 createRoot(document.getElementById("root")).render(
-  <BrowserRouter basename="/Travel-Agency-Web"> 
+  <BrowserRouter basename="/Travel-Agency-Web">
     <Routes>
       <Route path="/" element={<App />} />
       <Route path="/about-us" element={<AboutUs />} />

@@ -12,7 +12,7 @@ function Hero() {
   return (
     <div className="w-full h-[100vh] relative">
       <video
-        src="/sea.mp4"
+        src="./sea.mp4"
         autoPlay
         muted
         loop

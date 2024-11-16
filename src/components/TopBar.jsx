@@ -3,7 +3,7 @@ import { IoPaperPlaneOutline } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { onAuthStateChanged, signOut } from "firebase/auth";
-import { auth } from "./firebase"; // Ensure Firebase is properly configured
+import { auth } from "./firebase";
 
 export default function TopBar() {
   const navigate = useNavigate();
@@ -25,9 +25,9 @@ export default function TopBar() {
     navigate("/logIn"); // Navigate to Log In page
   };
 
-  const handleGoToBookingSection = () => {
-    document.getElementById("bookNow").scrollIntoView({ behavior: "smooth" });
-  }; // Navigating to the booking section
+  const handleGoToContact = () => {
+  navigate("/contact");
+  }; // Navigating to the contact page
 
   const handleLogOut = async () => {
     try {
@@ -55,7 +55,7 @@ export default function TopBar() {
           <p className="text-sm text-gray-700">+49 30 230 52 001</p>
         </div>
         <button 
-        onClick={handleGoToBookingSection}
+        onClick={handleGoToContact}
           className="px-4 py-2 border rounded-full bg-gradient-to-r from-[var(--primary-dark)] to-[var(--primary-light)] text-white"
         >
           Book Now!

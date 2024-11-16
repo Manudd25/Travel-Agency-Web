@@ -1,89 +1,126 @@
-import { AiFillPhone, AiOutlineClockCircle } from "react-icons/ai";
-import { IoPaperPlaneOutline } from "react-icons/io5";
+import { useState } from "react"; // Import useState for managing state
+import { GrLocation } from "react-icons/gr";
 import { useNavigate } from "react-router-dom";
-import { useState, useEffect } from "react";
-import { onAuthStateChanged, signOut } from "firebase/auth";
-import { auth } from "./firebase";
 
-export default function TopBar() {
+function Hero() {
   const navigate = useNavigate();
-  const [user, setUser] = useState(null);
-  const [logoutMessage, setLogoutMessage] = useState("");
 
-  useEffect(() => {
-    // Monitor authentication state
-    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      setUser(currentUser); // Update user state based on authentication
-      if (!currentUser) setLogoutMessage(""); // Clear logout message when user is not logged in
-    });
-
-    // Cleanup the listener on unmount
-    return () => unsubscribe();
-  }, []);
-
-  const handleGoToLogIn = () => {
-    navigate("/logIn"); // Navigate to Log In page
+  const handleGoToDeals = () => {
+    navigate("/deals");
   };
 
-  const handleGoToContact = () => {
-  navigate("/contact");
-  }; // Navigating to the contact page
+  const [price, setPrice] = useState(5000); // Move useState to Hero for PriceInput to access
 
-  const handleLogOut = async () => {
-    try {
-      await signOut(auth); // Log out the user
-      setLogoutMessage("You logged out successfully!"); // Set logout message
-      setUser(null); // Reset user state
-    } catch (error) {
-      console.error("Error logging out:", error);
-    }
+  const handlePriceChange = (event) => {
+    setPrice(Number(event.target.value)); // Ensure the value is converted to a number
   };
 
   return (
-    <div className="flex justify-between items-center px-4 py-2">
-      <div className="flex items-center">
-        <IoPaperPlaneOutline size={30} className="text-[var(--primary-dark)] mr-2" />
-        <h1 className="text-xl font-bold text-gray-700">BEYOND BORDERS</h1>
+    <div className="w-full h-[100vh] relative">
+      <video
+        src="./sea.mp4"
+        autoPlay
+        muted
+        loop
+        className="w-full h-full object-cover"
+      />
+
+      <div className="absolute inset-0 bg-black opacity-25 z-0"></div>
+
+      <div
+        className="max-w-[1200px] m-auto relative z-1 text-white h-full flex items-center justify-center px-4"
+        style={{ bottom: "100%" }}
+      >
+        {/* Flex container wrapping both sections */}
+        <div className="flex flex-col md:flex-row items-start w-full md:gap-20 gap-8">
+          {/* Text section */}
+          <div className="max-w-[600px]">
+            <h1
+              className="font-bold text-4xl"
+              style={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 0.4)" }}
+            >
+              Travel Beyond, Discover More
+            </h1>
+            <h2
+              className="text-4xl py-4 italic"
+              style={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 0.4)" }}
+            >
+              With Beyond Borders
+            </h2>
+            <p style={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 0.4)" }}>
+              Embrace the thrill of the unknown with Beyond Border. We go beyond
+              ordinary destinations to bring you experiences that spark
+              curiosity, fuel wanderlust, and connect you to the world in
+              unforgettable ways.
+            </p>
+          </div>
+
+          {/* Form section */}
+          <div className="mt-6 flex flex-col gap-6 max-w-[300px] w-full">
+            <div className="destinationInput">
+              <label
+                htmlFor="city"
+                style={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 0.4)" }}
+              >
+                Search your destination
+              </label>
+              <div className="input flex items-center">
+                <input
+                  type="text"
+                  placeholder="Enter name here..."
+                  className="p-2 rounded text-black w-full"
+                />
+                <GrLocation className="ml-2" size={40} />
+              </div>
+            </div>
+
+            <div className="dateInput">
+              <label
+                htmlFor="date"
+                style={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 0.4)" }}
+              >
+                Select your date
+              </label>
+              <div className="input flex items-center">
+                <input
+                  type="date"
+                  className="p-2 rounded text-black w-full"
+                />
+              </div>
+            </div>
+
+            <div className="priceInput">
+              <label
+                htmlFor="price"
+                style={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 0.4)" }}
+              >
+                Max price
+              </label>
+              <div className="input flex items-center">
+                <input
+                  type="range"
+                  id="price"
+                  min="500"
+                  max="5000"
+                  value={price}
+                  onChange={handlePriceChange}
+                  className="w-full"
+                />
+                <span className="ml-2">€{price}</span>
+              </div>
+            </div>
+
+            <button
+              onClick={handleGoToDeals}
+              className="mt-10 rounded-full bg-transparent border border-white text-white px-6 py-2 hover:bg-white hover:text-black transition"
+            >
+              Surprise me!
+            </button>
+          </div>
+        </div>
       </div>
-      <div className="flex items-center">
-        <div className="hidden md:flex items-center px-6">
-          <AiOutlineClockCircle size={20} className="mr-2 text-[var(--primary-dark)]" />
-          <p className="text-sm text-gray-700">9AM - 6PM</p>
-        </div>
-        <div className="hidden md:flex items-center px-6">
-          <AiFillPhone size={20} className="mr-2 text-[var(--primary-dark)]" />
-          <p className="text-sm text-gray-700">+49 30 230 52 001</p>
-        </div>
-        <button 
-        onClick={handleGoToContact}
-          className="px-4 py-2 border rounded-full bg-gradient-to-r from-[var(--primary-dark)] to-[var(--primary-light)] text-white"
-        >
-          Book Now!
-        </button>
-        {user ? (
-          // Log Out Button
-          <button
-            onClick={handleLogOut}
-            className="px-4 py-2 ml-4 border rounded-full bg-red-500 text-white"
-          >
-            Log Out
-          </button>
-        ) : (
-          // Log In Button
-          <button
-            onClick={handleGoToLogIn}
-            className="px-4 py-2 ml-4 border rounded-full bg-gradient-to-r from-[var(--primary-dark)] to-[var(--primary-light)] text-white"
-          >
-            Log In
-          </button>
-        )}
-      </div>
-      {/* Logout Message */}
-      {logoutMessage && (
-        <div className="absolute top-16 right-4 bg-green-100 text-green-800 p-2 rounded shadow-lg">
-          {logoutMessage}
-        </div>
-      )}
     </div>
   );
 }
+
+export default Hero;

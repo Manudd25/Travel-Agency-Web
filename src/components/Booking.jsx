@@ -1,7 +1,6 @@
 function Booking() {
   return (
     <div id="bookNow" className="max-w-[1140px] m-auto w-full p-4">
-
       <form className="lg:flex lg:justify-between w-full items-center">
         <div className="flex flex-col my-2 py-2">
           <label>Destination</label>
@@ -29,19 +28,23 @@ function Booking() {
             <option value="malacca">Malacca, Malaysia</option>
           </select>
         </div>
-        <div className="flex w-full">
-            <div className="flex flex-col w-full lg:max-w-[250px] my-2 p-2">
-                <label>Check In</label>
-                <input className="border rounded-md p-2" type="date" />
-            </div>
-            <div className="flex flex-col w-full lg:max-w-[250px] my-2 p-2">
-                <label>Check Out</label>
-                <input className="border rounded-md p-2" type="date" />
-            </div>
-            <div className="flex flex-col my-2 p-2 w-full">
-                <label>Search</label>
-                <button className='px-4 py-2 ml-4 border rounded-full bg-gradient-to-r from-[var(--primary-dark)] to-[var(--primary-light)] text-white w-full'>Rates & Availabilities</button>
-            </div>
+
+        {/* Wrap these fields in a flex container with responsive classes */}
+        <div className="flex flex-col lg:flex-row w-full">
+          <div className="flex flex-col w-full lg:max-w-[250px] my-2 p-2">
+            <label>Check In</label>
+            <input className="border rounded-md p-2" type="date" />
+          </div>
+          <div className="flex flex-col w-full lg:max-w-[250px] my-2 p-2">
+            <label>Check Out</label>
+            <input className="border rounded-md p-2" type="date" />
+          </div>
+          <div className="flex flex-col my-2 p-2 w-full">
+            <label>Search</label>
+            <button className="px-4 py-2 border rounded-full bg-gradient-to-r from-[var(--primary-dark)] to-[var(--primary-light)] text-white w-full">
+              Rates & Availabilities
+            </button>
+          </div>
         </div>
       </form>
     </div>

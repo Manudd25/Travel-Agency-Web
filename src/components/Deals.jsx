@@ -7,35 +7,35 @@ function Deals() {
     {
       title: "Paradise Escape to Bali",
       image: "https://images.unsplash.com/photo-1539367628448-4bc5c9d171c8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8QmFsaSUyMGlzbGFuZHN8ZW58MHx8MHx8fDI%3D",
-      price: "€399",
+      price: "€799",
       dates: "Available: Jan 5 - Jan 12, 2025",
       description: "7 nights in Bali with luxury villas, guided tours, and daily breakfast."
     },
     {
       title: "Dreamy Maldives Getaway",
       image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800",
-      price: "€499",
+      price: "€695",
       dates: "Available: Feb 15 - Feb 22, 2025",
       description: "Stay 7 nights in an overwater villa with beach access and water activities."
     },
     {
       title: "Caribbean Bliss in Aruba",
       image: "https://images.unsplash.com/photo-1625487328546-4b9fc4eeab1d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8QXJ1YmF8ZW58MHx8MHx8fDI%3D",
-      price: "€349",
+      price: "€849",
       dates: "Available: Mar 10 - Mar 17, 2025",
       description: "Relax on Aruba’s beaches for 7 nights with all-inclusive meals and entertainment."
     },
     {
       title: "Tropical Retreat in Seychelles",
       image: "https://images.unsplash.com/photo-1506405211174-1c41d7bc9ed6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fFNleWNoZWxsZXN8ZW58MHx8MHx8fDI%3D",
-      price: "€449",
+      price: "€985",
       dates: "Available: Apr 20 - Apr 27, 2025",
       description: "Enjoy 7 nights in a luxury resort with private beaches and spa services."
     },
     {
       title: "Cultural Escape to Mauritius",
       image: "https://images.unsplash.com/photo-1537640685236-a9df2496e232?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8TWF1cml0aXVzfGVufDB8fDB8fHwy",
-      price: "€399",
+      price: "€999",
       dates: "Available: May 5 - May 12, 2025",
       description: "Discover Mauritius with 7 nights in beachfront hotels, tours, and meals included."
     },

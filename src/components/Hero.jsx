@@ -28,7 +28,7 @@ function Hero() {
       <div className="absolute inset-0 bg-black opacity-25 z-0"></div>
 
       <div
-        className="max-w-[1200px] m-auto relative z-1 text-white h-full flex items-center justify-center px-4"
+        className="max-w-[1200px]  m-auto relative z-1 text-white h-full flex items-center justify-center px-4"
         style={{ bottom: "100%" }}
       >
         {/* Flex container wrapping both sections */}
@@ -36,7 +36,7 @@ function Hero() {
           {/* Text section */}
           <div className="max-w-[600px]">
             <h1
-              className="font-bold text-4xl"
+              className="font-bold text-4xl md:mt-2"
               style={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 0.4)" }}
             >
               Travel Beyond, Discover More

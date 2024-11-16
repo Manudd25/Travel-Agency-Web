@@ -36,7 +36,7 @@ function Hero() {
           {/* Text section */}
           <div className="max-w-[600px]">
             <h1
-              className="font-bold text-4xl"
+              className="font-bold text-4xl mt-6"
               style={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 0.4)" }}
             >
               Travel Beyond, Discover More
@@ -47,7 +47,7 @@ function Hero() {
             >
               With Beyond Borders
             </h2>
-            <p style={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 0.4)" }}>
+            <p className="hidden sm:block" style={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 0.4)" }}>
               Embrace the thrill of the unknown with Beyond Border. We go beyond
               ordinary destinations to bring you experiences that spark
               curiosity, fuel wanderlust, and connect you to the world in

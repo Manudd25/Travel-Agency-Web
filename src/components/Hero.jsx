@@ -36,7 +36,7 @@ function Hero() {
           {/* Text section */}
           <div className="max-w-[600px]">
             <h1
-              className="font-bold text-4xl md:mt-2"
+              className="font-bold text-4xl mt-6"
               style={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 0.4)" }}
             >
               Travel Beyond, Discover More

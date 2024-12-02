@@ -1,5 +1,4 @@
 {
-  "homepage": "https://manudd25.github.io/Travel-Agency-Web/",
   "name": "useeffect",
   "private": true,
   "version": "0.0.0",
@@ -8,8 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "deploy": "gh-pages -d dist"
+    "preview": "vite preview"
   },
   "dependencies": {
     "firebase": "^11.0.2",
@@ -18,7 +16,9 @@
     "react-dom": "^18.3.1",
     "react-icons": "^5.3.0",
     "react-router-dom": "^6.27.0",
-    "sass": "^1.80.6"
+    "react-slick": "^0.30.2",
+    "sass": "^1.80.6",
+    "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.13.0",
@@ -30,7 +30,6 @@
     "eslint-plugin-react": "^7.37.2",
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.14",
-    "gh-pages": "^6.2.0",
     "globals": "^15.11.0",
     "postcss": "^8.4.47",
     "sass-embedded": "^1.80.6",

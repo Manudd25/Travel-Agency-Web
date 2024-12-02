@@ -2,9 +2,7 @@
 import { useState } from "react";
 import { signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut } from "firebase/auth";
 import { auth } from "./firebase";
-import Navbar from "./Navbar";
-import TopBar from "./TopBar";
-import Footer from "./Footer";
+
 
 function LogIn() {
   const [email, setEmail] = useState("");
@@ -52,8 +50,7 @@ function LogIn() {
 
   return (
     <div>
-      <TopBar />
-      <Navbar />
+ 
 
       {/* Log In / Register Section */}
       <div className="max-w-[400px] m-auto mt-[300px] px-4 py-8 border rounded-lg shadow-lg text-center mb-[300px]">
@@ -177,7 +174,7 @@ function LogIn() {
         )}
       </div>
 
-      <Footer />
+ 
     </div>
   );
 }

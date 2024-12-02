@@ -1,4 +1,4 @@
-import { useState } from "react"; // Import useState for managing state
+import { useState, useEffect } from "react"; // Import useState for managing state
 import { GrLocation } from "react-icons/gr";
 import { useNavigate } from "react-router-dom";
 
@@ -15,10 +15,75 @@ function Hero() {
     setPrice(Number(event.target.value)); // Ensure the value is converted to a number
   };
 
+  // Add new states for destination input
+  const [searchInput, setSearchInput] = useState("");
+  const [suggestions, setSuggestions] = useState([]);
+  const [showSuggestions, setShowSuggestions] = useState(false);
+
+  // Update the destinations array with your actual destinations
+  const destinations = [
+    "Bali, Indonesia",
+    "Maldives",
+    "Phuket, Thailand",
+    "Boracay, Philippines",
+    "Seychelles",
+    "Fiji",
+    "Hawaii, USA",
+    "Jamaica",
+    "Bahamas",
+    "Aruba",
+    "Maui, Hawaii",
+    "Bora Bora, French Polynesia",
+    "Barbados",
+    "Puerto Rico",
+    "Zanzibar, Tanzania",
+    "St. Lucia",
+    "Mauritius",
+    "Pattaya, Thailand",
+    "Palawan, Philippines",
+    "Malacca, Malaysia"
+  ];
+
+  // Handle input change and filter suggestions
+  const handleSearchInputChange = (e) => {
+    const value = e.target.value;
+    setSearchInput(value);
+
+    if (value.trim() === "") {
+      setSuggestions([]);
+      setShowSuggestions(false);
+      return;
+    }
+
+    const filteredSuggestions = destinations.filter(destination =>
+      destination.toLowerCase().includes(value.toLowerCase())
+    );
+    setSuggestions(filteredSuggestions);
+    setShowSuggestions(true);
+  };
+
+  // Handle suggestion click
+  const handleSuggestionClick = (suggestion) => {
+    setSearchInput(suggestion);
+    setShowSuggestions(false);
+  };
+
+  // Close suggestions when clicking outside
+  useEffect(() => {
+    const handleClickOutside = () => {
+      setShowSuggestions(false);
+    };
+
+    document.addEventListener('click', handleClickOutside);
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, []);
+
   return (
     <div className="w-full h-[100vh] relative">
       <video
-        src="./sea.mp4"
+        src="/sea.mp4"
         autoPlay
         muted
         loop
@@ -36,7 +101,7 @@ function Hero() {
           {/* Text section */}
           <div className="max-w-[600px]">
             <h1
-              className="font-bold text-4xl mt-6"
+              className="font-bold text-4xl"
               style={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 0.4)" }}
             >
               Travel Beyond, Discover More
@@ -47,7 +112,7 @@ function Hero() {
             >
               With Beyond Borders
             </h2>
-            <p className="hidden sm:block" style={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 0.4)" }}>
+            <p style={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 0.4)" }}>
               Embrace the thrill of the unknown with Beyond Border. We go beyond
               ordinary destinations to bring you experiences that spark
               curiosity, fuel wanderlust, and connect you to the world in
@@ -57,7 +122,7 @@ function Hero() {
 
           {/* Form section */}
           <div className="mt-6 flex flex-col gap-6 max-w-[300px] w-full">
-            <div className="destinationInput">
+            <div className="destinationInput relative">
               <label
                 htmlFor="city"
                 style={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 0.4)" }}
@@ -69,9 +134,31 @@ function Hero() {
                   type="text"
                   placeholder="Enter name here..."
                   className="p-2 rounded text-black w-full"
+                  value={searchInput}
+                  onChange={handleSearchInputChange}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setShowSuggestions(true);
+                  }}
                 />
                 <GrLocation className="ml-2" size={40} />
               </div>
+              {showSuggestions && suggestions.length > 0 && (
+                <ul className="absolute w-full bg-white mt-1 rounded-md shadow-lg max-h-48 overflow-y-auto z-10">
+                  {suggestions.map((suggestion, index) => (
+                    <li
+                      key={index}
+                      className="px-4 py-2 text-black hover:bg-gray-100 cursor-pointer"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handleSuggestionClick(suggestion);
+                      }}
+                    >
+                      {suggestion}
+                    </li>
+                  ))}
+                </ul>
+              )}
             </div>
 
             <div className="dateInput">

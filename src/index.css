@@ -32,30 +32,3 @@
   
 }
 
-/* Mobile view: For screens 768px wide or smaller */
-@media (max-width: 768px) {
-  .hero-container {
-    height: 100vh; 
-    padding: 16px;
-  }
-
-  .hero-container h1 {
-    font-size: 2rem;
-  }
-
-  .hero-container .form-section {
-    width: 100%; 
-  }
-
-  .hero-container video {
-    object-fit: cover; 
-  }
-}
-
-@media (max-width: 640px) {
-  .hero-description {
-    display: none;
-  }
-}
-
-

@@ -1,4 +1,12 @@
+import { useNavigate } from 'react-router-dom';
+
 function Booking() {
+  const navigate = useNavigate();
+
+  const handleButtonClick = () => {
+    navigate('/resorts'); // Update with the correct path to your resort page
+  };
+
   return (
     <div id="bookNow" className="max-w-[1140px] m-auto w-full p-4">
       <form className="lg:flex lg:justify-between w-full items-center">
@@ -41,7 +49,10 @@ function Booking() {
           </div>
           <div className="flex flex-col my-2 p-2 w-full">
             <label>Search</label>
-            <button className="px-4 py-2 border rounded-full bg-gradient-to-r from-[var(--primary-dark)] to-[var(--primary-light)] text-white w-full">
+            <button
+              className="px-4 py-2 border rounded-full bg-gradient-to-r from-[var(--primary-dark)] to-[var(--primary-light)] text-white w-full"
+              onClick={handleButtonClick}
+            >
               Rates & Availabilities
             </button>
           </div>

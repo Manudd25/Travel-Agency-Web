@@ -23,12 +23,12 @@ function Contact() {
     {
       icon: <FaMapMarkerAlt className="text-2xl text-blue-600" />,
       title: "Location",
-      details: ["Unter den Linden 1", "10117 Berlin, Germany"],
+      details: ["Friedrichstraße 68", "10117 Berlin, Germany"],
     },
     {
       icon: <FaClock className="text-2xl text-blue-600" />,
       title: "Business Hours",
-      details: ["Monday - Friday: 9:00 AM - 6:00 PM", "Saturday: 10:00 AM - 4:00 PM"],
+      details: ["Monday - Friday: 9:00 AM - 6:00 PM"],
     },
   ];
 
@@ -132,7 +132,9 @@ function Contact() {
                 </div>
                 <button
                   type="submit"
-                  className="w-full py-3 px-6 rounded-md bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold hover:from-blue-700 hover:to-blue-800 transition duration-300 ease-in-out transform hover:-translate-y-1"
+                  className="w-full py-3 px-6 rounded-full 
+                  bg-gradient-to-r from-[var(--primary-dark)] to-[var(--primary-light)]
+                  hover:scale-105 duration-300 text-white"
                 >
                   Send Message
                 </button>

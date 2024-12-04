@@ -497,7 +497,11 @@ function Resorts() {
                     <span>{resort.rating}</span>
                   </div>
                 </div>
-                <button className="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition">
+                <button 
+                  className="w-full py-2 rounded-full 
+                  bg-gradient-to-r from-[var(--primary-dark)] to-[var(--primary-light)]
+                  hover:scale-105 duration-300 text-white"
+                >
                   Book Now
                 </button>
               </div>

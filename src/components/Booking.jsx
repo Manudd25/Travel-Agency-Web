@@ -8,7 +8,7 @@ function Booking() {
   };
 
   return (
-    <div id="bookNow" className="max-w-[1140px] m-auto w-full p-4">
+    <div id="bookNow" className="max-w-[1140px] m-auto w-full p-4 mt-12">
       <form className="lg:flex lg:justify-between w-full items-center">
         <div className="flex flex-col my-2 py-2">
           <label>Destination</label>

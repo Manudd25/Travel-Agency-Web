@@ -67,7 +67,7 @@ function Cruises() {
         id: 'c3',
         name: "Santorini Sunset Cruise",
         image: "https://plus.unsplash.com/premium_photo-1661963145672-a2bd28eba0fb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8c2FudG9yaW5pfGVufDB8fDB8fHww",
-        price: 89,
+        price: 890,
         location: "Santorini, Greece",
         description: "Romantic sunset cruise around Santorini's caldera with wine tasting and dinner.",
         duration: "5 hours",
@@ -79,12 +79,28 @@ function Cruises() {
           "Swimming Stops"
         ]
     },
+    {
+      id: 'c4',
+      name: "Thai Island Paradise Cruise",
+      image: "https://images.unsplash.com/photo-1728525954307-16e66116a027?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjV8fFRoYWlsYW5kJTIwcGFyYWRpc2V8ZW58MHx8MHx8fDI%3D",
+      price: 1800,
+      location: "Andaman Sea, Thailand",
+      description: "Sail through Thailand's most beautiful islands including Phi Phi, Krabi, and hidden gems of the Andaman Sea.",
+      duration: "6 nights",
+      rating: 4.8,
+      facilities: [
+        "All-Inclusive",
+        "Spa Services",
+        "Free WiFi",
+        "Swimming Stops"
+      ]
+    }
   ];    
 
   return (
     <div className="max-w-[1140px] m-auto py-16 px-4">
       <h2 className="text-center text-4xl font-bold text-gray-700 mb-8">Luxury Cruises</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
         {cruises.map((cruise) => (
           <div 
             key={cruise.id} 
@@ -133,8 +149,12 @@ function Cruises() {
                   </ul>
                 </div>
               </div>
-              <button className="w-full mt-6 bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition">
-                Book Now
+              <button 
+                className="w-full py-2 rounded-full 
+                bg-gradient-to-r from-[var(--primary-dark)] to-[var(--primary-light)]
+                hover:scale-105 duration-300 text-white"
+              >
+                Book Cruise
               </button>
             </div>
           </div>

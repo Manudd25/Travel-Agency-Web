@@ -1,5 +1,5 @@
 import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai';
-import { FaWifi, FaSwimmingPool, FaSpa, FaUtensils, FaUmbrellaBeach, FaGlassMartini } from 'react-icons/fa';
+import { FaWifi, FaSwimmingPool, FaSpa, FaUtensils, FaUmbrellaBeach, FaGlassMartini, FaPlane, FaBed, FaCheck } from 'react-icons/fa';
 import { useFavorites } from '../contexts/FavoriteContext';
 
 function Deals() {
@@ -8,119 +8,234 @@ function Deals() {
   const deals = [
     {
       id: 'd1',
-      title: "Summer Special - Bali Paradise Resort",
+      title: "Bali Luxury Escape",
+      subtitle: "5★ Private Pool Villa - All Inclusive",
       image: "https://cdn.pixabay.com/photo/2018/02/22/08/05/palma-3172367_640.jpg",
-      description: "Experience luxury with our special summer package including spa treatments and dining credits.",
+      description: "Experience the ultimate Balinese getaway",
       location: "Bali, Indonesia",
-      originalPrice: "€750",
-      discountedPrice: "€510",
+      originalPrice: "€2,750",
+      discountedPrice: "€1,899",
+      pricePerPerson: "€949",
       rating: 4.8,
       reviews: 324,
-      discount: "Save 32%",
+      discount: "-32%",
+      duration: "7 nights",
+      departureDate: "Multiple dates available",
+      departureFrom: "Berlin (BER)",
+      highlights: [
+        "Direct flights included",
+        "Private pool villa",
+        "All-inclusive meals",
+        "Daily spa treatment"
+      ],
       facilities: [
         { name: "Free WiFi", icon: <FaWifi className="text-blue-500" /> },
-        { name: "Infinity Pool", icon: <FaSwimmingPool className="text-cyan-500" /> },
+        { name: "Private Pool", icon: <FaSwimmingPool className="text-cyan-500" /> },
         { name: "Luxury Spa", icon: <FaSpa className="text-pink-500" /> },
-        { name: "Private Beach", icon: <FaUmbrellaBeach className="text-yellow-500" /> }
+        { name: "All-Inclusive", icon: <FaUtensils className="text-red-500" /> }
       ]
     },
     {
       id: 'd2',
-      title: "Maldives Getaway Package",
+      title: "Maldives Overwater Experience",
+      subtitle: "5★ Luxury Water Villa with Private Pool",
       image: "https://cdn.pixabay.com/photo/2014/02/08/04/55/maldives-261506_640.jpg",
-      description: "All-inclusive package with water villa stay and water sports activities.",
+      description: "Indulge in overwater luxury with this premium Maldives package",
       location: "Maldives",
-      originalPrice: "€1200",
-      discountedPrice: "€829",
+      originalPrice: "€4,200",
+      discountedPrice: "€2,899",
+      pricePerPerson: "€1,449",
       rating: 4.9,
       reviews: 412,
-      discount: "Save 31%",
+      discount: "-31%",
+      duration: "5 nights",
+      departureDate: "Flexible dates",
+      departureFrom: "Berlin (BER)",
+      highlights: [
+        "Business Class flights",
+        "Overwater villa",
+        "Half-board dining",
+        "Sunset cruise"
+      ],
       facilities: [
         { name: "Free WiFi", icon: <FaWifi className="text-blue-500" /> },
         { name: "Private Pool", icon: <FaSwimmingPool className="text-cyan-500" /> },
-        { name: "Beach Bar", icon: <FaGlassMartini className="text-purple-500" /> },
+        { name: "Premium Bar", icon: <FaGlassMartini className="text-purple-500" /> },
         { name: "Fine Dining", icon: <FaUtensils className="text-red-500" /> }
       ]
     },
     {
       id: 'd3',
-      title: "Phuket Luxury Escape",
+      title: "Thai Island Hopping Adventure",
+      subtitle: "4★ & 5★ Hotels - Island Tour Package",
       image: "https://cdn.pixabay.com/photo/2016/06/03/06/24/phuket-1432891_640.jpg",
-      description: "Exclusive beachfront villa with private chef and daily spa treatments.",
-      location: "Phuket, Thailand",
-      originalPrice: "€900",
-      discountedPrice: "€675",
+      description: "Explore the best of Thailand's islands",
+      location: "Thailand",
+      originalPrice: "€2,900",
+      discountedPrice: "€1,999",
+      pricePerPerson: "€999",
       rating: 4.7,
       reviews: 286,
-      discount: "Save 25%",
+      discount: "-25%",
+      duration: "10 nights",
+      departureDate: "Multiple dates available",
+      departureFrom: "Berlin (BER)",
+      highlights: [
+        "Return flights included",
+        "Island hopping tour",
+        "Daily breakfast",
+        "Private transfers"
+      ],
       facilities: [
         { name: "Free WiFi", icon: <FaWifi className="text-blue-500" /> },
-        { name: "Private Pool", icon: <FaSwimmingPool className="text-cyan-500" /> },
-        { name: "Luxury Spa", icon: <FaSpa className="text-pink-500" /> },
+        { name: "Beach Access", icon: <FaUmbrellaBeach className="text-yellow-500" /> },
+        { name: "Spa Access", icon: <FaSpa className="text-pink-500" /> },
         { name: "Fine Dining", icon: <FaUtensils className="text-red-500" /> }
+      ]
+    },
+    {
+      id: 'd4',
+      title: "Seychelles Paradise Escape",
+      subtitle: "5★ Private Island Resort & Spa",
+      image: "https://cdn.pixabay.com/photo/2017/01/20/00/30/maldives-1993704_1280.jpg",
+      description: "Discover pristine beaches and luxury in Seychelles",
+      location: "Mahé, Seychelles",
+      originalPrice: "€4,800",
+      discountedPrice: "€3,299",
+      pricePerPerson: "€1,649",
+      rating: 4.9,
+      reviews: 246,
+      discount: "-31%",
+      duration: "7 nights",
+      departureDate: "Multiple dates available",
+      departureFrom: "Berlin (BER)",
+      highlights: [
+        "Premium Economy flights",
+        "Beachfront villa",
+        "Half-board gourmet dining",
+        "Island hopping tour"
+      ],
+      facilities: [
+        { name: "Free WiFi", icon: <FaWifi className="text-blue-600" /> },
+        { name: "Private Beach", icon: <FaUmbrellaBeach className="text-amber-500" /> },
+        { name: "Luxury Spa", icon: <FaSpa className="text-rose-400" /> },
+        { name: "Fine Dining", icon: <FaUtensils className="text-emerald-500" /> }
       ]
     }
   ];
 
   return (
-    <div className="max-w-[1140px] m-auto py-16 px-4">
-      <h2 className="text-3xl font-bold text-center mb-8">Special Deals & Offers</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div className="max-w-[1170px] m-auto py-16 px-4">
+      <h2 className="text-3xl font-bold text-center mb-2">Hot Deals</h2>
+      <p className="text-gray-600 text-center mb-8">Limited time offers on luxury escapes</p>
+      
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
         {deals.map((deal) => (
           <div 
             key={deal.id}
-            className="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col"
+            className="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col hover:shadow-2xl transition-shadow duration-300 h-full"
           >
+            {/* Image Section */}
             <div className="relative">
               <img 
                 src={deal.image} 
                 alt={deal.title}
-                className="w-full h-64 object-cover"
+                className="w-full h-[200px] object-cover"
               />
-              <button
-                onClick={() => toggleFavorite(deal)}
-                className="absolute top-4 right-4 text-3xl text-white hover:scale-110 transition-transform duration-300"
-              >
-                {isFavorite(deal.id) ? (
-                  <AiFillHeart className="text-red-500" />
-                ) : (
-                  <AiOutlineHeart className="text-white" />
-                )}
-              </button>
-              <div className="absolute bottom-4 left-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+              <div className="absolute top-4 right-4">
+                <button
+                  onClick={() => toggleFavorite(deal)}
+                  className="text-3xl hover:scale-110 transition-transform duration-300"
+                >
+                  {isFavorite(deal.id) ? (
+                    <AiFillHeart className="text-red-500" />
+                  ) : (
+                    <AiOutlineHeart className="text-white" />
+                  )}
+                </button>
+              </div>
+              <div className="absolute top-4 left-4 bg-red-500 text-white px-2 py-1 rounded-lg text-lg font-bold">
                 {deal.discount}
+              </div>
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+                <h3 className="text-white text-xl font-bold">{deal.title}</h3>
+                <p className="text-white/90 text-sm">{deal.subtitle}</p>
               </div>
             </div>
 
-            <div className="p-6 flex flex-col flex-grow">
-              <h3 className="text-xl font-bold mb-2">{deal.title}</h3>
-              <p className="text-gray-600 mb-2">{deal.location}</p>
-              <p className="text-gray-700 mb-4">{deal.description}</p>
-
-              <div className="flex items-center mb-4 text-sm text-gray-600">
-                <span className="mr-2">⭐ {deal.rating}</span>
-                <span>({deal.reviews} reviews)</span>
-              </div>
-
-              <div className="border-t border-b border-gray-100 py-4 mb-4">
-                {deal.facilities.map((facility, idx) => (
-                  <div key={idx} className="flex items-center mb-2 last:mb-0">
-                    <span className="text-gray-400 mr-2">{facility.icon}</span>
-                    <span className="text-sm">{facility.name}</span>
-                  </div>
-                ))}
-              </div>
-
-              <div className="mt-auto">
-                <div className="flex items-center justify-between mb-4">
+            {/* Content Section */}
+            <div className="p-6 flex flex-col h-full">
+              {/* Price and Rating */}
+              <div className="mb-6">
+                <div className="flex justify-between items-start">
                   <div>
-                    <p className="text-gray-500 line-through text-sm">{deal.originalPrice}</p>
-                    <p className="text-2xl font-bold text-blue-600">{deal.discountedPrice}</p>
+                    <p className="text-sm text-gray-500 mb-1">Price per person from</p>
+                    <div className="flex items-center gap-2">
+                      <p className="text-2xl font-bold text-green-600">{deal.pricePerPerson}</p>
+                      <p className="text-sm text-gray-500 line-through">{deal.originalPrice}</p>
+                    </div>
                   </div>
-                  <button className="bg-gradient-to-r from-[var(--primary-dark)] to-[var(--primary-light)] text-white px-4 py-1.5 rounded-full hover:opacity-90 transition-opacity text-sm">
-                    Book Now
-                  </button>
+                  <div className="flex items-center bg-green-50 px-3 py-2 rounded-lg">
+                    <span className="text-green-700 font-bold mr-1">{deal.rating}</span>
+                    <span className="text-xs text-gray-600">({deal.reviews})</span>
+                  </div>
                 </div>
+              </div>
+
+              {/* Quick Info */}
+              <div className="mb-6">
+                <div className="flex items-center gap-6 text-sm text-gray-600">
+                  <div className="flex items-center gap-2">
+                    <FaPlane className="text-indigo-400 text-lg" />
+                    <span>{deal.duration}</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <FaBed className="text-purple-400 text-lg" />
+                    <span>5★ Resort</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <FaUtensils className="text-emerald-400 text-lg" />
+                    <span>Half Board</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Highlights */}
+              <div className="mb-6">
+                <ul className="grid grid-cols-2 gap-4">
+                  {deal.highlights.map((highlight, idx) => (
+                    <li key={idx} className="flex items-center text-sm text-gray-600">
+                      <FaCheck className="text-green-500 mr-3 text-sm" />
+                      {highlight}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Departure Info */}
+              <div className="mb-6">
+                <div className="text-sm text-gray-600 space-y-2">
+                  <p className="flex items-center gap-2">
+                    <span className="text-lg">✈️</span>
+                    From {deal.departureFrom}
+                  </p>
+                  <p className="flex items-center gap-2">
+                    <span className="text-lg">📅</span>
+                    {deal.departureDate}
+                  </p>
+                </div>
+              </div>
+
+              {/* Book Button - Now will stick to bottom */}
+              <div className="mt-auto">
+                <button 
+                  className="w-full py-2 rounded-full 
+                  bg-gradient-to-r from-[var(--primary-dark)] to-[var(--primary-light)]
+                  hover:scale-105 duration-300 text-white font-bold text-lg"
+                >
+                  View Deal
+                </button>
+                <p className="text-xs text-gray-500 text-center mt-3">Free cancellation up to 48h before departure</p>
               </div>
             </div>
           </div>

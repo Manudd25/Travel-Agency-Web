@@ -1,5 +1,6 @@
 import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai';
 import { FaCar, FaUtensils, FaSwimmer, FaUserTie, FaWineGlass, FaUmbrellaBeach, FaUserGraduate, FaCoffee, FaFish, FaShip } from 'react-icons/fa';
+import { MdKayaking } from "react-icons/md";
 import { TbScubaMask } from 'react-icons/tb';
 import { useFavorites } from '../contexts/FavoriteContext';
 
@@ -20,7 +21,9 @@ function Excursions() {
       "Diving Equipment": <TbScubaMask className="text-blue-600" />,
       "Certified Instructors": <FaUserGraduate className="text-green-500" />,
       "Lunch & Refreshments": <FaCoffee className="text-brown-500" />,
-      "Marine Life Guide": <FaFish className="text-teal-500" />
+      "Marine Life Guide": <FaFish className="text-teal-500" />,
+      "Speedboat Tour": <FaShip className="text-blue-500" />,
+      "Kayaking Equipment": <MdKayaking className="text-cyan-600" />
     };
     return icons[facility] || <FaShip className="text-gray-500" />;
   };
@@ -32,7 +35,7 @@ function Excursions() {
       image: "https://cdn.pixabay.com/photo/2017/01/20/00/30/maldives-1993704_640.jpg",
       price: 120,
       location: "Phuket, Thailand",
-      description: "Full-day speedboat tour to Phi Phi Islands, including Maya Bay and snorkeling spots.",
+      description: "Full-day speedboat tour to Phi Phi Islands, incl. Maya Bay and snorkeling spots. Discover the vibrant marine life and stunning beaches.",
       duration: "Full Day (8 hours)",
       rating: 4.8,
       includes: [
@@ -64,7 +67,7 @@ function Excursions() {
       image: "https://images.unsplash.com/photo-1682687981907-170c006e3744?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGdyZWF0JTIwYmFycmllciUyMHJpZWYlMjBkaXZpbmd8ZW58MHx8MHx8fDA%3D",
       price: 195,
       location: "Cairns, Australia",
-      description: "Discover the underwater wonders of the Great Barrier Reef with certified diving instructors.",
+      description: "Discover the underwater wonders of the Great Barrier Reef with certified diving instructors. Experience the world's largest coral reef system.",
       duration: "Full Day (10 hours)",
       rating: 4.7,
       includes: [
@@ -73,13 +76,29 @@ function Excursions() {
         "Lunch & Refreshments",
         "Marine Life Guide"
       ]
+    },
+    {
+      id: 'e4',
+      name: "James Bond Island Adventure",
+      image: "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8amFtZXMlMjBib25kJTIwaXNsYW5kfGVufDB8fDB8fHww",
+      price: 110,
+      location: "Phang Nga Bay, Thailand",
+      description: "Explore the famous James Bond Island and surrounding limestone cliffs by speedboat, with kayaking through hidden lagoons and caves.",
+      duration: "Full Day (8 hours)",
+      rating: 4.7,
+      includes: [
+        "Hotel Pickup/Drop-off",
+        "Speedboat Tour",
+        "Lunch Buffet",
+        "Kayaking Equipment"
+      ]
     }
   ];
 
   return (
     <div className="max-w-[1140px] m-auto py-16 px-4">
       <h2 className="text-center text-4xl font-bold text-gray-700 mb-8">Exciting Excursions</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
         {excursions.map((excursion) => (
           <div 
             key={excursion.id} 
@@ -128,8 +147,12 @@ function Excursions() {
                   </ul>
                 </div>
               </div>
-              <button className="w-full mt-4 bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition">
-                Book Now
+              <button 
+                className="w-full py-2 rounded-full 
+                bg-gradient-to-r from-[var(--primary-dark)] to-[var(--primary-light)]
+                hover:scale-105 duration-300 text-white"
+              >
+                Book Excursion
               </button>
             </div>
           </div>

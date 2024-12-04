@@ -191,7 +191,7 @@ function Hero() {
                   max="5000"
                   value={price}
                   onChange={handlePriceChange}
-                  className="w-full"
+                  className="w-full accent-gray-700 bg-gray-700/80"
                 />
                 <span className="ml-2">€{price}</span>
               </div>

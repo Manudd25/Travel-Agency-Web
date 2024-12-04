@@ -1,4 +1,5 @@
 {
+  "homepage": "https://manudd25.github.io/Travel-Agency-Web/",
   "name": "useeffect",
   "private": true,
   "version": "0.0.0",
@@ -7,7 +8,10 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "gh-pages -d dist"
+
+    
   },
   "dependencies": {
     "firebase": "^11.0.2",
